@@ -27,17 +27,17 @@ const covidItems = [
 
 const cuilItems = [{
   name: 'Número de CUIL',
-  data: '20352021270',
+  data: '20-35202127-0',
 }]
 
 const licItems = [{
   name: 'Fecha de vencimiento',
-  data: '09/10/2022',
+  data: '12/07/2024',
 }]
 
 const dniItems = [{
   name: 'Fecha de vencimiento',
-  data: '15/11/2032',
+  data: '17/05/2025',
 }]
 
 export default function Home() {

@@ -168,7 +168,7 @@ export default function Card(props) {
         .card-cuil p,
         .card-lic p {
           padding: 10px;
-          font-size: 14px;
+          font-size: 16px;
           color: #0994D7;
           font-weight: 600;
         }
