@@ -50,31 +50,33 @@ export default function Home() {
 
       <main>
         <Header />
-        <Card
-          title='Certificado Único Habilitante para Circulación - Covid-19'
-          borderColor='yellow'
-          items={covidItems}
-          status='due'
-          dd
-        />
-        <Card
-          title='Constancia de CUIL'
-          borderColor='green'
-          items={cuilItems}
-          cuil
-        />
-        <Card
-          title='Licencia Nacional de Conducir'
-          borderColor='green'
-          items={licItems}
-          status='ok'
-          lic
-        />
-        <Card
-          title='DNI: 35202127'
-          borderColor='green'
-          items={dniItems}
-        />
+        <div className="card-wrapper">
+          <Card
+            title='Certificado Único Habilitante para Circulación - Covid-19'
+            borderColor='yellow'
+            items={covidItems}
+            status='due'
+            dd
+          />
+          <Card
+            title='Constancia de CUIL'
+            borderColor='green'
+            items={cuilItems}
+            cuil
+          />
+          <Card
+            title='Licencia Nacional de Conducir'
+            borderColor='green'
+            items={licItems}
+            status='ok'
+            lic
+          />
+          <Card
+            title='DNI: 35202127'
+            borderColor='green'
+            items={dniItems}
+          />
+        </div>
       </main>
 
       <style jsx global>{`
@@ -95,6 +97,9 @@ export default function Home() {
         p {
           margin: 0;
           padding: 0;
+        }
+        .card-wrapper {
+            padding-top: 58px;
         }
       `}</style>
     </div>

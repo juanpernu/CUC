@@ -9,6 +9,9 @@ export default function Header() {
       <style jsx>{`
         .header-container {
           background-color: #0994D7;
+          position: fixed;
+          z-index: 1000;
+          width: 100%;
         }
 
         .arrow {
