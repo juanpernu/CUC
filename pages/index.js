@@ -51,6 +51,7 @@ export default function Home() {
       <main>
         <Header
           title='Mi billetera'
+          href='/'
         />
         <div className="card-wrapper">
           <Card

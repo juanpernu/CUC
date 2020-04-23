@@ -19,6 +19,7 @@ export default function Validation() {
       <main>
         <Header
           title='Certificado Único Habilitante para Circulación - Covid-19'
+          href={'/'}
         />
         <div className="qr-container">
           <p>Última actualización {`${da}/${mo}/${ye} ${h}:${m}hs`}</p>
