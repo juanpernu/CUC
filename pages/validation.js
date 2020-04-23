@@ -2,6 +2,13 @@ import Head from 'next/head'
 import Header from '../components/header'
 
 export default function Validation() {
+  const d = new Date();
+  const h = d.getHours() - 2;
+  const m = d.getMinutes();
+  const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
+  const mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d)
+  const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)
+
   return (
     <div className="container">
       <Head>
@@ -13,8 +20,10 @@ export default function Validation() {
         <Header
           title='Certificado Único Habilitante para Circulación - Covid-19'
         />
-        <p>Última actualización</p>
-        <img width="165" className="footer-img" src="/qr.png" />
+        <div className="qr-container">
+          <p>Última actualización {`${da}/${mo}/${ye} ${h}:${m}hs`}</p>
+          <img width="300" className="footer-img" src="/qr.png" />
+        </div>
       </main>
 
       <style jsx global>{`
@@ -38,6 +47,18 @@ export default function Validation() {
         }
         .card-wrapper {
             padding-top: 58px;
+        }
+        .qr-container {
+          padding-top: 80px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .qr-container p {
+          color: #777;
+          font-size: 14px;
+          margin-bottom: 20px;
         }
       `}</style>
     </div>
