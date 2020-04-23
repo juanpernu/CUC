@@ -5,8 +5,12 @@ export default function Card(props) {
     ok: 'Vigente'
   }
 
+  function onClickHandler() {
+    window.location.href = '/validation';
+  }
+
   return (
-    <div className={`card-container border-${borderColor}`}>
+    <div onClick={() => onClickHandler()} className={`card-container border-${borderColor}`}>
       <div className="card">
         <p className="card-title">{title}</p>
         <div className="card-content">

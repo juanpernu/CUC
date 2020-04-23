@@ -44,12 +44,14 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Mi Argentina</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Header />
+        <Header
+          title='Mi billetera'
+        />
         <div className="card-wrapper">
           <Card
             title='Certificado Único Habilitante para Circulación - Covid-19'
@@ -57,6 +59,7 @@ export default function Home() {
             items={covidItems}
             status='due'
             dd
+            clickLink='https://www.google.com.ar'
           />
           <Card
             title='Constancia de CUIL'
