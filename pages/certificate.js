@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import Header from "../components/header";
 import Card from "../components/card";
@@ -48,12 +48,19 @@ const dniItems = [
 ];
 
 export default function Certificate() {
-  useEffect(() => {
-    async function rotate() {
-      if (window && screen) await screen.orientation.lock("landscape");
-    }
-    rotate();
-  }, []);
+  ////////////// HACK PARA ROTAR LA PANTALLA //////////////
+  // @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  //   html {
+  //     transform: rotate(-90deg);
+  //     transform-origin: left top;
+  //     width: 100vh;
+  //     height: 100vw;
+  //     overflow-x: hidden;
+  //     position: absolute;
+  //     top: 100%;
+  //     left: 0;
+  //   }
+  // }
 
   return (
     <div className="container">
