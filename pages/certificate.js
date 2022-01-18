@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Header from "../components/header";
 import Card from "../components/card";
@@ -46,7 +47,14 @@ const dniItems = [
   },
 ];
 
-export default function Home() {
+export default function Certificate() {
+  useEffect(() => {
+    async function rotate() {
+      if (window && screen) await screen.orientation.lock("landscape");
+    }
+    rotate();
+  }, []);
+
   return (
     <div className="container">
       <Head>
@@ -55,12 +63,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Mis documentos" href="/" />
+        <Header title="Certificado vacunación Covid-19" href="/" />
         <div className="card-wrapper">
-          <Card
-            title="Certificado vacunación Covid 19"
-            clickLink="https://www.google.com.ar"
-          />
+          <p>CERTIFICADO</p>
         </div>
       </main>
 
