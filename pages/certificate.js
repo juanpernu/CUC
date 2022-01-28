@@ -85,6 +85,8 @@ export default function Certificate() {
 
         /* The element to apply the animation to */
         .container {
+          width: calc(100% + 60px);
+          padding-left: 60px;
           animation-name: slide;
           animation-duration: 0.6s;
         }
