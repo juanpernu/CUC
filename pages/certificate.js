@@ -1,67 +1,10 @@
 import React from "react";
 import Head from "next/head";
 import Header from "../components/header";
-import Card from "../components/card";
-
-const covidItems = [
-  {
-    name: "Nombre",
-    data: "Juan Manuel",
-  },
-  {
-    name: "Apellido",
-    data: "Pernumian",
-  },
-  {
-    name: "Documento",
-    data: "35202127",
-  },
-  {
-    name: "Vehículo",
-    data: "A057RLS",
-  },
-  {
-    name: "Fecha de vencimiento",
-    data: "26/04/2020",
-  },
-];
-
-const cuilItems = [
-  {
-    name: "Número de CUIL",
-    data: "20-35202127-0",
-  },
-];
-
-const licItems = [
-  {
-    name: "Fecha de vencimiento",
-    data: "12/07/2024",
-  },
-];
-
-const dniItems = [
-  {
-    name: "Fecha de vencimiento",
-    data: "17/05/2025",
-  },
-];
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 export default function Certificate() {
-  ////////////// HACK PARA ROTAR LA PANTALLA //////////////
-  // @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
-  //   html {
-  //     transform: rotate(-90deg);
-  //     transform-origin: left top;
-  //     width: 100vh;
-  //     height: 100vw;
-  //     overflow-x: hidden;
-  //     position: absolute;
-  //     top: 100%;
-  //     left: 0;
-  //   }
-  // }
-
   return (
     <div className="container">
       <Head>
@@ -71,12 +14,34 @@ export default function Certificate() {
 
       <main>
         <Header title="Certificado vacunación Covid-19" href="/" />
-        <div className="card-wrapper">
-          <p>CERTIFICADO</p>
+        <div className="image-container">
+          <Carousel
+            showArrows
+            showIndicators={false}
+            showThumbs={false}
+            showStatus={false}
+          >
+            <img src="/certif_1.png" />
+            <img src="/certif_1.png" />
+            <img src="/certif_1.png" />
+          </Carousel>
         </div>
       </main>
 
       <style jsx global>{`
+        ////////////// HACK PARA ROTAR LA PANTALLA //////////////
+        @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+          html {
+            transform: rotate(90deg);
+            transform-origin: right top;
+            width: 100vh;
+            height: 100vw;
+            overflow-x: hidden;
+            position: absolute;
+            top: 100%;
+            right: 0;
+          }
+        }
         html,
         body {
           padding: 0;
@@ -95,8 +60,33 @@ export default function Certificate() {
           margin: 0;
           padding: 0;
         }
-        .card-wrapper {
-          padding-top: 58px;
+        .image-container {
+          max-width: 100%;
+          padding-top: 60px;
+        }
+        .carousel .slider-wrapper {
+          width: 100%;
+          margin: 0 auto;
+          display: block;
+        }
+        .carousel .slide img {
+          width: 60%;
+        }
+
+        /* The animation code */
+        @keyframes slide {
+          from {
+            transform: translateY(-100%);
+          }
+          to {
+            transform: translateY(0%);
+          }
+        }
+
+        /* The element to apply the animation to */
+        .container {
+          animation-name: slide;
+          animation-duration: 0.6s;
         }
       `}</style>
     </div>

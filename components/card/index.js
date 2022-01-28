@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Button } from "../button";
 import { getDate } from "../../utils";
 
-export default function Card({ title }) {
+export default function Card({ title, fill, link }) {
   const [show, setShow] = useState(false);
 
   return (
-    <div onClick={() => setShow(!show)} className="card-container">
-      <div className="header">
+    <div className="card-container">
+      <div onClick={() => setShow(!show)} className="header">
         <div className="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@ export default function Card({ title }) {
             viewBox="0 0 24 24"
           >
             <path
-              fill="#F594BF"
+              fill={fill}
               d="M0 3v18h24v-18h-24zm13 14h-10v-.417c-.004-1.112.044-1.747 1.324-2.043 1.403-.324 2.787-.613 2.122-1.841-1.973-3.637-.563-5.699 1.554-5.699 2.077 0 3.521 1.985 1.556 5.699-.647 1.22.688 1.51 2.121 1.841 1.284.297 1.328.936 1.323 2.057v.403zm8 0h-6v-2h6v2zm0-4h-6v-2h6v2zm0-4h-6v-2h6v2z"
             />
           </svg>
@@ -46,8 +46,8 @@ export default function Card({ title }) {
         </div>
         <div className="block">
           <h3 className="title">Ministerio de Salud</h3>
-          <Button href="/" text="Ver certificado" type="primary" />
-          <Button href="/" text="Descargar certificado" type="secondary" />
+          <Button href={link} text="Ver certificado" type="primary" />
+          <Button href="#" text="Descargar certificado" type="secondary" />
         </div>
       </div>
       <div className={`content${show ? " show" : ""}`}>
@@ -89,6 +89,7 @@ export default function Card({ title }) {
           font-weight: 600;
           line-height: 19px;
           color: #202020;
+          width: 85%;
         }
 
         .icon {
@@ -98,8 +99,6 @@ export default function Card({ title }) {
 
         .icon.ar {
           margin-right: 0;
-          left: 46px;
-          position: relative;
         }
 
         .content {

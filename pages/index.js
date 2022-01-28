@@ -56,10 +56,28 @@ export default function Home() {
 
       <main>
         <Header title="Mis documentos" href="/" />
-        <div className="card-wrapper">
+        <div className="card-wrapper pt">
           <Card
             title="Certificado vacunación Covid 19"
-            clickLink="https://www.google.com.ar"
+            fill="#F594BF"
+            link="/certificate"
+          />
+        </div>
+        <div className="card-wrapper">
+          <Card title="CUIL" fill="#8FBDF2" link="https://www.google.com.ar" />
+        </div>
+        <div className="card-wrapper">
+          <Card
+            title="Licencia Nacional de Conducir"
+            fill="#F9C385"
+            link="https://www.google.com.ar"
+          />
+        </div>
+        <div className="card-wrapper">
+          <Card
+            title="Donación de órganos y tejidos"
+            fill="#F594BF"
+            link="https://www.google.com.ar"
           />
         </div>
       </main>
@@ -83,7 +101,7 @@ export default function Home() {
           margin: 0;
           padding: 0;
         }
-        .card-wrapper {
+        .card-wrapper.pt {
           padding-top: 58px;
         }
       `}</style>
