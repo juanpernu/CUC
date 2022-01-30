@@ -22,8 +22,8 @@ export default function Certificate() {
             showStatus={false}
           >
             <img src="/certif_1.png" />
-            <img src="/certif_1.png" />
-            <img src="/certif_1.png" />
+            <img src="/certif_2.png" />
+            <img src="/certif_3.png" />
           </Carousel>
         </div>
       </main>
